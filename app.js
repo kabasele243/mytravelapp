@@ -1,16 +1,30 @@
 const express = require('express');
-const fs = require('fs')
-const app = express()
+const fs = require('fs');
+const app = express();
+const morgan = require('morgan');
 
 const tours = JSON.parse(
     fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`))
 
+app.use(morgan('dev'));
 
-app.use(express.json())
+app.use(express.json());
+
+app.use((req, res, next) => {
+    console.log('Hello from the middleware!');
+    next()
+})
+
+app.use((req,res,next) => {
+    req.requestTime = new Date().toISOString();
+    next()
+})
 
 const getAllTours = (req, res) => {
+
     res.status(200).json({
           status: "success",
+          requestedAt: req.requestTime,
           results: tours.length,
           data: {
               tours
@@ -91,18 +105,18 @@ const deleteTour =  (req, res) => {
 // app.delete('/api/v1/tours/:id', deleteTour)
 
 app
-  .routes('/api/v1/tours')
+  .route('/api/v1/tours')
   .get(getAllTours)
   .post(createTour)
 
 app
-  .routes('/api/v1/tours/:id')
+  .route('/api/v1/tours/:id')
   .get(getTour)
   .patch(updateTour)
-  .deleteTour(deleteTour)
+  .delete(deleteTour)
 
 
-  
+
 const port = 4500;
 app.listen(port, () => {
     console.log(`Server is on port ${port}`)

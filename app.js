@@ -8,7 +8,7 @@ const tours = JSON.parse(
 
 app.use(express.json())
 
-app.get('/api/v1/tours', (req, res) => {
+const getAllTours = (req, res) => {
     res.status(200).json({
           status: "success",
           results: tours.length,
@@ -16,9 +16,9 @@ app.get('/api/v1/tours', (req, res) => {
               tours
           }
       })
-})
+}
 
-app.get('/api/v1/tours/:id', (req, res) => {
+const getTour = (req, res) => {
     
     const id = req.params.id * 5 ;
     const tour = tours.find( el => el.id == req.params.id);
@@ -36,9 +36,9 @@ app.get('/api/v1/tours/:id', (req, res) => {
               tour
           }
       })
-})
+}
 
-app.post('/api/v1/tours', (req, res) => {
+const createTour = (req, res) => {
     const newId = tours[tours.length - 1].id + 1;
     const newTour = Object.assign({ id : newId}, req.body);
 
@@ -51,9 +51,9 @@ app.post('/api/v1/tours', (req, res) => {
             }
         })
     })
-})
+}
 
-app.patch('/api/v1/tours', (req, res) => {
+const updateTour = (req, res) => {
     if(req.params.id * id > tours.length) {
         return res.status(404).json({
             status: 'fail',
@@ -67,9 +67,9 @@ app.patch('/api/v1/tours', (req, res) => {
             tour: '<Update tour here...'
         }
     })
-})
+}
 
-app.delete('/api/v1/tours/:id', (req, res) => {
+const deleteTour =  (req, res) => {
     
     if(req.params.id * 1 > tours.length){
         return res.status(404).json({
@@ -77,9 +77,32 @@ app.delete('/api/v1/tours/:id', (req, res) => {
             message: 'Invalid ID'
         })
     }
-})
+
+    res.status(204).json({
+        status: 'success',
+        data: null
+    })
+}
+
+// app.get('/api/v1/tours', getAllTours)
+// app.get('/api/v1/tours/:id', getTour)
+// app.post('/api/v1/tours', createTour)
+// app.patch('/api/v1/tours', updateTour)
+// app.delete('/api/v1/tours/:id', deleteTour)
+
+app
+  .routes('/api/v1/tours')
+  .get(getAllTours)
+  .post(createTour)
+
+app
+  .routes('/api/v1/tours/:id')
+  .get(getTour)
+  .patch(updateTour)
+  .deleteTour(deleteTour)
 
 
+  
 const port = 4500;
 app.listen(port, () => {
     console.log(`Server is on port ${port}`)

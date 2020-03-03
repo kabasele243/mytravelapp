@@ -4,7 +4,8 @@
   "description": "web application for users to reserve and books vacations tours.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start:dev": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -15,7 +16,9 @@
   "author": "Franck Kabasele",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.9.3",
     "morgan": "^1.9.1"
   }
 }

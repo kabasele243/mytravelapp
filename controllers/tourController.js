@@ -1,5 +1,8 @@
 const Tour = require('./../models/tourModel')
 
+exports.aliasTopTours = (req, res, next) => {
+
+};
 
 exports.getAllTours = async (req, res) => {
 try {

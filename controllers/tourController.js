@@ -63,9 +63,9 @@ try {
      res.status(400).json({
          status: 'fail',
          message: err
-     })
- }
-}
+     });
+   }
+};
 
 exports.updateTour = async (req, res) => {
     try {

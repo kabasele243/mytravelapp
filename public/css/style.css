@@ -156,13 +156,13 @@ body {
     linear,
     left top,
     right bottom,
-    from(rgba(125, 213, 111, 0.85)),
-    to(rgba(40, 180, 135, 0.85))
+    from(#ABDCFF),
+    to(#0396FF)
   );
   background-image: linear-gradient(
     to bottom right,
-    rgba(125, 213, 111, 0.85),
-    rgba(40, 180, 135, 0.85)
+    rgba(70, 178, 228, 0.85),
+    rgba(20, 129, 218, 0.85)
   );
 }
 
@@ -1112,10 +1112,10 @@ body {
     linear,
     left top,
     right bottom,
-    from(#7dd56f),
-    to(#28b487)
+    from(#ABDCFF),
+    to(#0396FF)
   );
-  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background-image: linear-gradient(to right bottom, #ABDCFF, #0396FF);
   opacity: 0.7;
 }
 .card__picture-img {
@@ -1159,7 +1159,7 @@ body {
 .card__icon {
   height: 2rem;
   width: 2rem;
-  fill: #55c57a;
+  fill: #0396FF;
 }
 .card__footer {
   background-color: #f7f7f7;

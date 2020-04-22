@@ -6,15 +6,15 @@ html
     link(rel="stylesheet", href="css/style.css")
     link(rel="shortcut icon", href="img/favicon.png", type="image/png")
     link(href="https://fonts.googleapis.com/css?family=Lato:300,300i,700" rel="stylesheet")
-    title MyTravelApp | More than a trip, an experience
+    title MyTravelApp | #{title}
 
   body
     // HEADER
     include _header
     
     // CONTENT
-    section.overview
-      h1 My Tour
+    block content
+      h1 This is a placeholder
 
     //FOOTER
     include _footer

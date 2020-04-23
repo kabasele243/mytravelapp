@@ -722,6 +722,8 @@ body {
     from(#3bbaec),
     to(#0396FF)
   );
+
+  
   background: linear-gradient(to right bottom, #3bbaec, #0396FF);
   z-index: 10;
   -webkit-transform: translate(-35%, -50%);

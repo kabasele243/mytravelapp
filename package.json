@@ -7,7 +7,9 @@
     "start:dev": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "ndb server.js"
+    "debug": "ndb server.js",
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "keywords": [
     "node.js",
@@ -17,7 +19,10 @@
   "author": "Franck Kabasele",
   "license": "ISC",
   "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-mongo-sanitize": "^2.0.0",
@@ -33,5 +38,8 @@
     "slugify": "^1.4.0",
     "validator": "^13.0.0",
     "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
   }
 }

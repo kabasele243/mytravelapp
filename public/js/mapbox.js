@@ -1,7 +1,7 @@
 /* eslint-disable */
-const locations = JSON.parse(document.getElementById('map').dataset.locations)
 
-// export const displayMap = locations => {
+
+export const displayMap = locations => {
     mapboxgl.accessToken =
     'pk.eyJ1Ijoia2FiYXNlbGUyNDMiLCJhIjoiY2s5ZGFqOHpvMDFvdDNmcGI0YXhwbXQ1aCJ9.WKjBRPbpyOOfpXGDaZCmkA';
   
@@ -49,4 +49,4 @@ const locations = JSON.parse(document.getElementById('map').dataset.locations)
         right: 100
       }
     });
-//   };
+  };

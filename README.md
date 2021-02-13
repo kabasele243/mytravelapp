@@ -1,6 +1,6 @@
 # MytravelApp
 
-![MyTravel Image](./public/img/capture.PNG)
+![MyTravel Image](./public/img/Capture.PNG)
 
 MyTravelApp is an app designed to solve the problems of travelers who wanna unique destinations around the world.
 

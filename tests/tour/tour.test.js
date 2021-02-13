@@ -1,10 +1,8 @@
-// Get All Tours
-// Get A Tour
-// Create New Tour
-// Update Tour
-// Delete Tour
-// Get Top 5 Cheap Tours
-// Get Monthly Plan
-// Get Tour Stats
-// Get Tours Within Radius
-// Get Distances to TOurs from Point
+const request = require('supertest');
+const app = require('../../app'); 
+
+test('Get all tours', function (done){
+  request(app)
+    .get('/api/v1/tours')
+    .expect(200, done)
+})

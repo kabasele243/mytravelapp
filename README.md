@@ -1,27 +1,13 @@
 # MytravelApp
 
+![MyTravel Image](./public/img/capture.PNG)
+
 MyTravelApp is an app designed to solve the problems of travelers who wanna unique destinations around the world.
-
-As a developer that will enable any collaborators to:
-
-:heavy_check_mark: Sharpen their skill sets
-
-:heavy_check_mark: Learn new languages
-
-:heavy_check_mark: Work in a team environment
-
-:heavy_check_mark: Get real world experience
-
-:heavy_check_mark: Make something that helps the world
-
-:heavy_check_mark: learn all about the process of taking an app from idea to product
-
-:heavy_check_mark: and most importantly, have fun along the way.
 
 
 ### Tech Stack
 
-:rocket: React
+:rocket: Pug
 
 :flying_saucer: Node
 

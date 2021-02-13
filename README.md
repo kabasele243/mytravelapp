@@ -73,17 +73,21 @@ As soon as you get there, you are going to see a green **Compare and Create a pu
 Click on it and type your message then click on **Create pull request**.
 
 
-# Getting Started / Installation
+## Running the application
 
+To run the application _without_ hot-reloading (code changes not picked up automatically), run:
 
-Trello board: https://trello.com
+`npm start`
 
-# Team
+To run the application _with_ hot-reloading (code changes picked up automatically), run:
 
-:computer: Software Engineer: **@kabasele**
+`npm run dev`
 
+To lint the code and run automated tests, use:
 
+`npm test` or `npm t`
 
-# Handy Resources
+To check out the other "run" scripts available in this project, try:
 
-- [React.js official documentation](https://reactjs.org/docs/getting-started.html)
+`npm run`
+

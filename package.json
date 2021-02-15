@@ -4,8 +4,8 @@
   "description": "web application for users to reserve and books vacations tours.",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon server.js",
-    "start:prod": "NODE_ENV=production nodemon server.js",
+    "dev": "nodemon server.js",
+    "start": "NODE_ENV=production nodemon server.js",
     "test": "jest --watch --detectOpenHandles --testTimeout=10000",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
@@ -53,5 +53,8 @@
     "jest": "^26.6.3",
     "parcel-bundler": "^1.12.4",
     "supertest": "^3.4.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
   }
 }

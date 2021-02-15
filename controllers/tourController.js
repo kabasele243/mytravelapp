@@ -4,6 +4,7 @@ const Tour = require('./../models/tourModel');
 const catchAsync = require('./../utils/catchAsync');
 const factory = require('./handlerFactory');
 const AppError = require('./../utils/appError');
+const APIFeatures = require('./../utils/apiFeatures');
 
 const multerStorage = multer.memoryStorage();
 
@@ -66,7 +67,28 @@ exports.aliasTopTours = (req, res, next) => {
   next();
 };
 
-exports.getAllTours = factory.getAll(Tour);
+exports.getAllTours = catchAsync(async (req, res, next) => {
+  // To allow for nested GET reviews on tour (hack)
+  let filter = {};
+  if (req.params.tourId) filter = { tour: req.params.tourId };
+
+  const features = new APIFeatures(Tour.find(filter), req.query)
+    .filter()
+    .sort()
+    .limitFields()
+    .paginate();
+  // const doc = await features.query.explain();
+  const doc = await features.query;
+
+  // SEND RESPONSE
+  res.status(200).json({
+    status: 'success',
+    results: doc.length,
+    data: {
+      data: doc
+    }
+  });
+});
 exports.getTour = factory.getOne(Tour, { path: 'reviews' });
 exports.createTour = factory.createOne(Tour);
 exports.updateTour = factory.updateOne(Tour);
@@ -91,9 +113,7 @@ exports.getTourStats = catchAsync(async (req, res, next) => {
     {
       $sort: { avgPrice: 1 }
     }
-    // {
-    //   $match: { _id: { $ne: 'EASY' } }
-    // }
+
   ]);
 
   res.status(200).json({

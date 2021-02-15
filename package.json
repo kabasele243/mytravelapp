@@ -1,12 +1,12 @@
 {
   "name": "mytravelapp",
   "version": "1.0.0",
-  "description": "web application for users to reserve and books vacations tours.",
+  "description": "web application for users to reserve and book vacations tours.",
   "main": "app.js",
   "scripts": {
+    "start": "node server.js",
     "dev": "nodemon server.js",
-    "start": "NODE_ENV=production node server.js",
-    "test": "jest --watch --detectOpenHandles --testTimeout=10000",
+    "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
     "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"

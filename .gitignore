@@ -4,3 +4,4 @@ config.env
 dev.env
 ./dev.env
 /config
+.cache

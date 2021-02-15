@@ -28,6 +28,11 @@ app.enable('trust proxy');
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
+// Implement CORS
+app.use(cors());
+// Access-Control-Allow-Origin *
+
+
 // 1) GLOBAL MIDDLEWARES
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));

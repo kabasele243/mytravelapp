@@ -778,10 +778,10 @@ body {
     linear,
     left top,
     right bottom,
-    from(#31a9ee),
+    from(#0396FF),
     to(#0396FF)
   );
-  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+  background-image: linear-gradient(to right bottom, #0396FF, #0396FF);
   padding: 4rem 0;
 }
 .user-view__content {
@@ -1311,15 +1311,15 @@ body {
 }
 
 .form__upload:focus + label {
-  outline: 3px solid #55c57a;
+  outline: 3px solid #0396FF;
   outline-offset: 3px;
 }
 
 .form__upload + label {
-  color: #55c57a;
+  color: #0396FF;
   display: inline-block;
   text-decoration: none;
-  border-bottom: 1px solid #55c57a;
+  border-bottom: 1px solid #0396FF;
   padding: 3px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;

@@ -14,6 +14,8 @@ const factory = require('./handlerFactory');
 //     cb(null, `user-${req.user.id}-${Date.now()}.${ext}`);
 //   }
 // });
+
+//Use in memory story the process the buffer image with sharp
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {

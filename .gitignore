@@ -5,3 +5,5 @@ dev.env
 ./dev.env
 /config
 .cache
+/tests
+./tests
